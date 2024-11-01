@@ -27,7 +27,7 @@ function Header() {
   const { language, toggleLanguage } = useLanguage();
   const [menuOpen, setMenuOpen] = useState(false);
   const content = contentData[language];
-  const navItems = ['Research', 'Publications', 'Members', 'Recruitment', 'Access'] as const;
+  const navItems = ['Research', 'Publications', 'Members', 'Join', 'Access'] as const;
 
   return (
     <header className="fixed w-full backdrop-blur-md bg-black/30 border-b border-gray-800 z-50">
@@ -64,7 +64,7 @@ function Header() {
                   href={`/${item.toLowerCase()}`}
                   className="hover:text-blue-400 transition-colors duration-200 text-lg"
                 >
-                  {content.nav[item.toLowerCase() as 'research' | 'publications' | 'members' | 'recruitment' | 'access']}
+                  {content.nav[item.toLowerCase() as 'research' | 'publications' | 'members' | 'join' | 'access']}
                 </Link>
               </li>
             ))}

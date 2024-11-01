@@ -1,29 +1,4 @@
-export const members = [
-    {
-        id: 1,
-        name: "山田 太郎",
-        role: "教授",
-        specialization: "人工知能",
-        description: "機械学習と深層学習の研究に20年以上従事。複数の国際学会で招待講演を行う。",
-        imageUrl: "/members/yamada.jpg"
-    },
-    {
-        id: 2,
-        name: "鈴木 花子",
-        role: "准教授",
-        specialization: "ロボティクス",
-        description: "自律型ロボットの開発と制御系設計を専門とする。産業用ロボットの実用化に貢献。",
-        imageUrl: "/members/suzuki.jpg"
-    },
-    {
-        id: 3,
-        name: "佐藤 健一",
-        role: "助教",
-        specialization: "データサイエンス",
-        description: "ビッグデータ解析と予測モデルの研究に従事。若手研究者賞を受賞。",
-        imageUrl: "/members/sato.jpg"
-    }
-];
+
 
 export const research = [
     {
@@ -49,10 +24,9 @@ export const research = [
     }
 ];
 
-type NavKeys = 'home' | 'members' | 'research' | 'publications' | 'recruitment' | 'access';
+type NavKeys = 'home' | 'members' | 'research' | 'publications' | 'join' | 'access';
 
 type ContentType = {
-    members: typeof members;
     research: typeof research;
     nav: Record<NavKeys, string>;
     header: {
@@ -62,14 +36,13 @@ type ContentType = {
 
 export const contentData: Record<'ja' | 'en', ContentType> = {
     ja: {
-        members: members,
         research: research,
         nav: {
             home: 'ホーム',
             members: 'メンバー',
             research: '研究紹介',
             publications: '研究業績',
-            recruitment: '学生募集',
+            join: '学生募集',  // joinキーで「学生募集」テキストを維持
             access: 'アクセス'
         },
         header: {
@@ -77,17 +50,6 @@ export const contentData: Record<'ja' | 'en', ContentType> = {
         }
     },
     en: {
-        members: [
-            {
-                id: 1,
-                name: "Taro Yamada",
-                role: "Professor",
-                specialization: "Artificial Intelligence",
-                description: "Over 20 years of experience in machine learning and deep learning research. Invited speaker at multiple international conferences.",
-                imageUrl: "/members/yamada.jpg"
-            },
-            // ... translate other members similarly
-        ],
         research: [
             {
                 id: 1,
@@ -103,7 +65,7 @@ export const contentData: Record<'ja' | 'en', ContentType> = {
             members: 'Members',
             research: 'Research',
             publications: 'Publications',
-            recruitment: 'Recruitment',
+            join: 'Join',
             access: 'Access'
         },
         header: {
