@@ -18,11 +18,6 @@ const geistMono = localFont({
   weight: "100 900",
 });
 
-export const metadata: Metadata = {
-  title: "自己紹介",
-  description: "これは私の自己紹介ページです",
-};
-
 function Header() {
   const { language, toggleLanguage } = useLanguage();
   const [menuOpen, setMenuOpen] = useState(false);
