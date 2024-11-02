@@ -21,7 +21,7 @@ function Header() {
   const { language, toggleLanguage } = useLanguage();
   const [menuOpen, setMenuOpen] = useState(false);
   const content = contentData[language];
-  const navItems = ['Research', 'Publications', 'Members', 'Join', 'Access'] as const;
+  const navItems = ['profile', 'works', 'blog', 'contact'] as const;
 
   return (
     <header className="fixed w-full backdrop-blur-md bg-black/30 border-b border-gray-800 z-50">
@@ -29,7 +29,7 @@ function Header() {
         <div className="flex items-center gap-4">
           <Link href="/">
             <h1 className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent cursor-pointer">
-              {language === 'ja' ? '藤原研究室' : 'FUJIWARA LAB'}
+              {language === 'ja' ? '小平 航大のホームページ' : 'Kota Kodaira\'s Website'}
             </h1>
           </Link>
           <button
@@ -55,10 +55,10 @@ function Header() {
             {navItems.map((item) => (
               <li key={item}>
                 <Link
-                  href={`/${item.toLowerCase()}`}
+                  href={`/${item}`}
                   className="hover:text-blue-400 transition-colors duration-200 text-lg"
                 >
-                  {content.nav[item.toLowerCase() as 'research' | 'publications' | 'members' | 'join' | 'access']}
+                  {content.nav[item]}
                 </Link>
               </li>
             ))}
@@ -71,11 +71,11 @@ function Header() {
             {navItems.map((item) => (
               <li key={item}>
                 <Link
-                  href={`/${item.toLowerCase()}`}
+                  href={`/${item}`}
                   onClick={() => setMenuOpen(false)}
                   className="hover:text-blue-400 transition-colors duration-200"
                 >
-                  {content.nav[item.toLowerCase() as 'members' | 'research']}
+                  {content.nav[item]}
                 </Link>
               </li>
             ))}
